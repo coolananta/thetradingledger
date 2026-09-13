@@ -1,0 +1,207 @@
+@import "ledger-components";
+
+// ---------------------------------------------------------------------------
+// Base reset & typography
+// Quarto's Bootstrap layer used to provide all of this for free. Path A means
+// writing it ourselves — deliberately minimal, no framework riding along.
+// ---------------------------------------------------------------------------
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: $body-bg;
+  color: $body-color;
+  font-family: $font-family-sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headings-font-family;
+  line-height: 1.25;
+  margin-top: 1.6em;
+  margin-bottom: 0.5em;
+}
+h1 { font-size: $h1-font-size; }
+h2 { font-size: $h2-font-size; }
+h3 { font-size: $h3-font-size; }
+
+p { margin: 0 0 1.1em 0; }
+
+a {
+  color: $link-color;
+  text-decoration: $link-decoration;
+}
+a:hover { text-decoration: underline; }
+
+img { max-width: 100%; height: auto; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.4em 0;
+  font-size: 0.95rem;
+}
+th, td {
+  border: 1px solid $table-border-color;
+  padding: 0.5em 0.7em;
+  text-align: left;
+}
+th { background: #F2EFE4; font-weight: 700; }
+
+code {
+  font-family: $font-family-monospace;
+  background: #F0ECDD;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+pre {
+  background: #1C2321;
+  color: #F5F1E4;
+  padding: 1em 1.2em;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+pre code { background: none; padding: 0; color: inherit; }
+
+blockquote {
+  border-left: 4px solid $navbar-hl;
+  margin: 1.2em 0;
+  padding: 0.2em 0 0.2em 1em;
+  color: #444;
+}
+
+hr { border: none; border-top: 1px solid $border-color; margin: 2em 0; }
+
+// ---------------------------------------------------------------------------
+// Layout container — replicates Quarto's grid: body-width: 780px
+// ---------------------------------------------------------------------------
+.page-container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+.page-container-wide {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+// ---------------------------------------------------------------------------
+// Navbar
+// ---------------------------------------------------------------------------
+.site-navbar {
+  background: $navbar-bg;
+  border-bottom: 3px solid $navbar-hl;
+}
+.site-navbar .nav-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0.9rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.navbar-brand {
+  color: $navbar-fg;
+  font-size: 1.35rem;
+  text-decoration: none;
+}
+.navbar-brand:hover { text-decoration: none; }
+.nav-links {
+  display: flex;
+  gap: 1.4rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.nav-links a {
+  color: $navbar-fg;
+  font-size: 0.95rem;
+  text-decoration: none;
+  opacity: 0.88;
+}
+.nav-links a:hover { opacity: 1; text-decoration: underline; }
+.nav-icon-link { color: $navbar-fg; opacity: 0.85; }
+.nav-icon-link:hover { opacity: 1; }
+
+// ---------------------------------------------------------------------------
+// Footer
+// ---------------------------------------------------------------------------
+footer.footer {
+  background: $footer-bg;
+  color: $footer-fg;
+  margin-top: 3rem;
+  padding: 1.4rem 1.25rem;
+  font-size: 0.85rem;
+}
+footer.footer .footer-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+// ---------------------------------------------------------------------------
+// Buttons — Bootstrap used to provide the base .btn box model; now explicit.
+// ---------------------------------------------------------------------------
+.btn {
+  display: inline-block;
+  padding: 0.55rem 1.1rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+.btn:hover { text-decoration: none; }
+.btn-lg { padding: 0.7rem 1.4rem; font-size: 1.05rem; }
+
+// ---------------------------------------------------------------------------
+// Page title block (used at the top of posts/pages, mirrors Quarto's h1.title)
+// ---------------------------------------------------------------------------
+.page-title-block { margin-bottom: 1.5rem; }
+h1.title {
+  margin-top: 0.4em;
+}
+.page-subtitle {
+  font-family: $headings-font-family;
+  font-style: italic;
+  color: #555;
+  font-size: 1.15rem;
+  margin-top: -0.3em;
+}
+.page-meta {
+  font-family: $font-family-monospace;
+  font-size: 0.82rem;
+  color: #777;
+  margin-bottom: 0.5em;
+}
+
+// ---------------------------------------------------------------------------
+// Table of contents (used on longer posts)
+// ---------------------------------------------------------------------------
+.post-toc {
+  background: #F2EFE4;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+.post-toc summary { cursor: pointer; font-weight: 700; }
+.post-toc ul { margin: 0.6rem 0 0 0; padding-left: 1.2rem; }
+
+@media (max-width: 640px) {
+  h1 { font-size: 2rem; }
+  .hero { padding: 2rem 1.4rem; }
+  .hero h1 { font-size: 1.9rem; }
+}

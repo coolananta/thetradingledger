@@ -1,0 +1,14 @@
+{{/*
+  Usage (replaces Quarto's ::: {.callout-note} syntax):
+
+  {{< callout type="note" title="My Title" >}}
+  Body content, **markdown works** here.
+  {{< /callout >}}
+
+  type: note | tip | important | warning
+*/}}
+{{ $type := .Get "type" | default "note" }}
+<div class="callout callout-{{ $type }}">
+  {{ with .Get "title" }}<span class="callout-title">{{ . }}</span>{{ end }}
+  {{ .Inner | markdownify }}
+</div>

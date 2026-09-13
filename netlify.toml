@@ -1,0 +1,33 @@
+[build]
+  command = "hugo --gc --minify"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.166.0"
+  HUGO_EXTENDED = "true"
+  HUGO_ENV = "production"
+
+# Long-lived caching for static, hashed assets keeps repeat visits fast.
+# Hugo Pipes fingerprints the compiled CSS (a content hash in the filename),
+# so it's safe to cache it "forever" — a new post never reuses an old filename.
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

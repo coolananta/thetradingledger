@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="page-title-block">
+  <h1 class="title">{{ .Title }}</h1>
+  <p>Every post below is a same-day writeup of a real trading session — the setup, the numbers, and the decision points, in that order.</p>
+</div>
+
+{{ range .Pages.ByDate.Reverse }}
+<a class="post-card" href="{{ .Permalink }}">
+  <span class="post-card-date">{{ .Date.Format "Jan 2, 2006" }}{{ with .Params.categories }} · {{ delimit . ", " }}{{ end }}</span>
+  <span class="post-card-title">{{ .Title }}</span>
+  <p class="post-card-desc">{{ .Params.subtitle | default .Summary }}</p>
+</a>
+{{ end }}
+{{ end }}

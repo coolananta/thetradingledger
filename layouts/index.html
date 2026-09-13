@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="hero">
+  <h1>The Trading Ledger</h1>
+  <p>A running, unfiltered account of trades taken and trades missed — the setups that worked, the ones that didn't, and the specific decisions in between. Written and maintained anonymously, by someone who trades this the same way it's written here: in public, without editing out the losses.</p>
+  <a class="btn btn-gold btn-lg" href="/posts/">Read the Journal</a>
+  <a class="btn btn-outline-parchment btn-lg" href="/about/">About This Project</a>
+</div>
+
+<h2>Who writes this</h2>
+<p>
+  <span class="pill pill-slate">Author: Anonymous</span>
+  <span class="pill pill-emerald">Independent · No affiliations</span>
+</p>
+<p>This journal is kept by one person, publishing under no name at all. That's a deliberate choice, not an oversight — the point of this space is the trade and the reasoning behind it, not a personal brand built on top of it. Every entry is a real session: real tickers, real fills, real numbers, written the same day the trade happened.</p>
+
+<h2>Latest entries</h2>
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+{{ range first 3 $posts.ByDate.Reverse }}
+<a class="post-card" href="{{ .Permalink }}">
+  <span class="post-card-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+  <span class="post-card-title">{{ .Title }}</span>
+  <p class="post-card-desc">{{ .Params.subtitle | default .Summary }}</p>
+</a>
+{{ end }}
+
+<p><a href="/posts/">See the full Journal &rarr;</a></p>
+{{ end }}

@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div class="page-title-block">
+  <h1 class="title">Category: {{ .Title }}</h1>
+</div>
+{{ range .Pages.ByDate.Reverse }}
+<a class="post-card" href="{{ .Permalink }}">
+  <span class="post-card-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+  <span class="post-card-title">{{ .Title }}</span>
+  <p class="post-card-desc">{{ .Params.subtitle | default .Summary }}</p>
+</a>
+{{ end }}
+{{ end }}

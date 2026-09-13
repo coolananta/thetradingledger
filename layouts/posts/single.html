@@ -1,0 +1,24 @@
+{{ define "main" }}
+<article>
+  <div class="page-title-block">
+    <h1 class="title">{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="page-subtitle">{{ . }}</p>{{ end }}
+    <p class="page-meta">
+      {{ .Date.Format "Monday, January 2, 2006" }}
+      {{ with .Params.categories }} · {{ delimit . ", " }}{{ end }}
+      · {{ .ReadingTime }} min read
+    </p>
+  </div>
+
+  {{ if ge (len .TableOfContents) 40 }}
+  <details class="post-toc">
+    <summary>Jump to a section</summary>
+    {{ .TableOfContents }}
+  </details>
+  {{ end }}
+
+  {{ .Content }}
+</article>
+
+{{ partial "giscus.html" . }}
+{{ end }}

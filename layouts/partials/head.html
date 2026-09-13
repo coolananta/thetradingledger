@@ -1,0 +1,30 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{{- $pageTitle := .Title }}
+{{- if .IsHome }}{{ $pageTitle = .Site.Title }}{{ end }}
+<title>{{ $pageTitle }}{{ if not .IsHome }} · {{ .Site.Title }}{{ end }}</title>
+
+{{- $desc := .Params.description | default .Site.Params.description }}
+<meta name="description" content="{{ $desc }}">
+<link rel="canonical" href="{{ .Permalink }}">
+
+<!-- Open Graph / social preview -->
+<meta property="og:title" content="{{ $pageTitle }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+
+<!-- RSS -->
+{{ with .OutputFormats.Get "rss" }}
+<link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .Permalink }}">
+{{ end }}
+
+<link rel="icon" href="/favicon.ico">
+
+{{/* CSS: Hugo Pipes compiles SCSS, minifies, and fingerprints for long-lived caching. */}}
+{{ $style := resources.Get "scss/main.scss" | css.Sass | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+
+{{ partial "analytics.html" . }}

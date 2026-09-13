@@ -1,0 +1,64 @@
+baseURL = "https://tradingzournal.netlify.app/"
+languageCode = "en-us"
+title = "The Trading Ledger"
+copyright = "© 2026 Anonymous. All rights reserved."
+
+# Pretty URLs like /posts/my-post/ instead of /posts/my-post.html.
+# Netlify Forms and giscus don't care either way, but this is the Hugo-idiomatic default.
+uglyURLs = false
+
+enableRobotsTXT = true
+
+[params]
+  description = "A candid, numbers-first trading journal — real trades, real mistakes, real math."
+  email = "ganon298@gmail.com"
+  author = "Anonymous"
+
+  [params.giscus]
+    enabled = false   # flip to true once configured — see PUBLISHING.md
+    repo = "yourusername/your-repo-name"
+    repoId = "REPLACE_WITH_YOUR_REPO_ID"
+    category = "General"
+    categoryId = "REPLACE_WITH_YOUR_CATEGORY_ID"
+    theme = "light"
+
+  [params.analytics]
+    enabled = true
+    gtagId = "G-HKYQ6GG6B2"
+
+[menu]
+  [[menu.main]]
+    name = "Welcome"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Journal"
+    url = "/posts/"
+    weight = 2
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 3
+
+[taxonomies]
+  category = "categories"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      # REQUIRED: your stat-box/tree/timeline/bar-chart components are raw HTML.
+      # Goldmark strips raw HTML by default for security; this site's own hand-authored
+      # components are trusted, so we allow it through. Never disable this check for a
+      # site that accepts untrusted markdown contributions.
+      unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5

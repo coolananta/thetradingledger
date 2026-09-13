@@ -1,0 +1,12 @@
+<header class="site-navbar">
+  <div class="nav-inner">
+    <a class="navbar-brand" href="/">{{ .Site.Title }}</a>
+    <nav class="nav-links">
+      {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}">{{ .Name }}</a>
+      {{ end }}
+      <a class="nav-icon-link" href="mailto:{{ .Site.Params.email }}" aria-label="Email the author" title="Email">&#9993;</a>
+      <a class="nav-icon-link" href="/posts/index.xml" aria-label="RSS feed" title="RSS">&#8635;</a>
+    </nav>
+  </div>
+</header>
