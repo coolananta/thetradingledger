@@ -58,3 +58,4 @@ New entries are posted as sessions happen — no schedule, no padding, no "conte
 </form>
 
 <p><small>Your email is used only to send new posts from this journal. See the <a href="/privacy/">Privacy Policy</a> for details. Unsubscribe anytime.</small></p>
+

@@ -29,3 +29,4 @@ You can unsubscribe from journal emails at any time by replying to any email you
 This policy may be updated occasionally to reflect changes in how the site operates. Check back here for the current version.
 
 *Last updated: 2026.*
+

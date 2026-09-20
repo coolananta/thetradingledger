@@ -67,7 +67,7 @@ After the missed setups and a rough stretch trying to catch OFAL consolidating o
 {{< callout type="note" title="Entry and exit — OFAL" >}}
 *OFAL 15-min chart*
 
-<img src="/images/ofal-entries-exits.png" alt="OFAL 15-minute chart showing the missed 8:30 AM double-tap, the VWAP pullback entry near the halt, and the exit at $3.70 as the gap-up pattern broke" style="width:100%;border-radius:8px;border:1px solid #E2E0D8;" loading="lazy" />
+{{< img src="/images/ofal-entries-exits.png" alt="OFAL 15-minute chart showing the missed 8:30 AM double-tap, the VWAP pullback entry near the halt, and the exit at $3.70 as the gap-up pattern broke" >}}
 {{< /callout >}}
 
 ## BIVI: real Parkinson's data, a broken rule, and a fast, correct bailout
@@ -94,7 +94,7 @@ Getting stopped out over 8 cents sounds like nothing to write about, but it's ac
 {{< callout type="note" title="Entry and exit — BIVI" >}}
 *BIVI 1-min Chart*
 
-<img src="/images/bivi-entries-exits.png" alt="BIVI 1-minute chart showing the missed VWAP double-tap at $2.90, the 10:04 AM entry, and the 11:02 AM entry with an 8-cent stop-out" style="width:100%;border-radius:8px;border:1px solid #E2E0D8;" loading="lazy" />
+{{< img src="/images/bivi-entries-exits.png" alt="BIVI 1-minute chart showing the missed VWAP double-tap at $2.90, the 10:04 AM entry, and the 11:02 AM entry with an 8-cent stop-out" >}}
 {{< /callout >}}
 
 ## The moves, side by side
@@ -145,3 +145,4 @@ Twenty-two fills is overtrading by any definition, and it's a habit that's clear
 *Related reading: [Sixteen Fills, One Regret](/posts/2026-08-05-yxt-inlf/) — the last time overtrading was the real story · [The Fourth VWAP Tap That Actually Worked](/posts/2026-08-11-wxm-plag/) — yesterday's confluence read, one session before this one.*
 
 *Nothing in this post is financial advice — see the [Disclaimer](/disclaimer/) for the full statement.*
+

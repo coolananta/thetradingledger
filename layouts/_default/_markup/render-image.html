@@ -1,0 +1,43 @@
+{{- $src := .Destination -}}
+{{- $alt := .Text -}}
+{{- $title := .Title -}}
+
+{{/* Clean up common path prefixes for assets/ lookup */}}
+{{- $path := $src -}}
+{{- $path = strings.TrimPrefix "/" $path -}}
+{{- $path = strings.TrimPrefix "static/" $path -}}
+
+{{ errorf "TEST: Hugo is loading render-image.html!" }}
+{{/* 1. Try finding image as a Page Resource (Page Bundles) */}}
+{{- $img := .Page.Resources.GetMatch $src -}}
+
+{{/* 2. Try finding image in assets/ or static/ using original destination */}}
+{{- if not $img -}}
+  {{- $img = resources.Get $src -}}
+{{- end -}}
+
+{{/* 3. Try finding image using normalized relative path */}}
+{{- if not $img -}}
+  {{- $img = resources.Get $path -}}
+{{- end -}}
+
+{{- if $img -}}
+  {{/* Convert PNG to WebP */}}
+  {{- $optimized := $img.Process "webp q80" -}}
+
+  <figure class="image-container">
+    <img 
+      src="{{ $optimized.RelPermalink }}" 
+      width="{{ $optimized.Width }}" 
+      height="{{ $optimized.Height }}" 
+      alt="{{ $alt }}" 
+      {{ with $title }}title="{{ . }}"{{ end }}
+      loading="lazy"
+      decoding="async">
+    {{ with $alt }}<figcaption>{{ . }}</figcaption>{{ end }}
+  </figure>
+{{- else -}}
+  {{/* Print explicit warning to terminal to help diagnose exact missing path */}}
+  {{- warnf "[Render Hook] Could not find resource for path: %q (Normalized: %q) on page: %q" $src $path .Page.File.Path -}}
+  <img src="{{ $src | safeURL }}" alt="{{ $alt }}" {{ with $title }}title="{{ . }}"{{ end }} loading="lazy">
+{{- end -}}

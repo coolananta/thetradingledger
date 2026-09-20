@@ -1,0 +1,51 @@
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- $caption := .Get "caption" -}}
+{{- $title := .Get "title" | default "" -}}
+
+{{/* Strip leading slashes and static/ prefixes */}}
+{{- $path := strings.TrimPrefix "/" $src -}}
+{{- $path = strings.TrimPrefix "static/" $path -}}
+
+{{/* Look for image resources */}}
+{{- $img := .Page.Resources.GetMatch $src -}}
+{{- if not $img -}}
+  {{- $img = resources.Get $path -}}
+{{- end -}}
+
+{{- if $img -}}
+  {{/* Hugo WebP processing */}}
+  {{- $optimized := $img -}}
+  {{- if gt $img.Width 1200 -}}
+    {{- $optimized = $img.Resize "1200x webp q75" -}}
+  {{- else -}}
+    {{- $optimized = $img.Process "webp q75" -}}
+  {{- end -}}
+
+  <img 
+    src="{{ $optimized.RelPermalink }}" 
+    width="{{ $optimized.Width }}" 
+    height="{{ $optimized.Height }}" 
+    alt="{{ $alt }}" 
+    {{ with $title }}title="{{ . }}"{{ end }}
+    loading="lazy"
+    decoding="async"
+    style="display: block; max-width: 100%; height: auto; margin: 0 auto; border-radius: 8px; border: 1px solid #E2E0D8;">
+
+{{- else -}}
+  {{/* Fallback for static paths */}}
+  <img 
+    src="{{ $src | safeURL }}" 
+    alt="{{ $alt }}" 
+    {{ with $title }}title="{{ . }}"{{ end }} 
+    loading="lazy"
+    decoding="async"
+    style="display: block; max-width: 100%; height: auto; margin: 0 auto; border-radius: 8px; border: 1px solid #E2E0D8;">
+{{- end -}}
+
+{{/* ONLY render caption if caption="..." attribute is explicitly passed to the shortcode */}}
+{{ with $caption }}
+  <figcaption style="display: block; width: 100%; margin-top: 0.4rem; font-size: 0.85rem; color: #666; text-align: center;">
+    {{ . }}
+  </figcaption>
+{{ end }}

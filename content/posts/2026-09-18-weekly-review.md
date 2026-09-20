@@ -83,7 +83,7 @@ The initial impulse leg ran from about **$0.50 to $8** on September 15th — nea
 That's roughly **230% in a little over an hour**, on a setup that matched my favorite pattern exactly, on a stock I dismissed for a reason (float size, pre-market chop) that turned out not to matter once the real session started.
 
 <figure>
-<img src="/images/reto-1min-chart.png" alt="RETO 1-minute chart showing the double bottom at the $6.22 six-month high, the curl back up, and the run to $20.85 while price stayed contained within the 21-EMA" style="width:100%;border-radius:8px;border:1px solid #E2E0D8;" loading="lazy">
+{{< img src="/images/reto-1min-chart.png" alt="RETO 1-minute chart showing the double bottom at the $6.22 six-month high, the curl back up, and the run to $20.85 while price stayed contained within the 21-EMA" >}}
 <figcaption>RETO 1-min Chart</figcaption>
 </figure>
 
@@ -106,7 +106,7 @@ MEDS had been riding the **9-EMA on the hourly chart** for a while. It then form
 {{< /callout >}}
 
 <figure>
-<img src="/images/meds-15min-chart.png" alt="MEDS 15-minute chart showing the 3-hour-15-minute consolidation under the 100 DMA, the breakout at 9:45 AM, and the run from $4.50 to $12.26" style="width:100%;border-radius:8px;border:1px solid #E2E0D8;" loading="lazy">
+{{{{< img src="/images/meds-15min-chart.png" alt="MEDS 15-minute chart showing the 3-hour-15-minute consolidation under the 100 DMA, the breakout at 9:45 AM, and the run from $4.50 to $12.26" >}}}}
 <figcaption>MEDS 15-min Chart</figcaption>
 </figure>
 
@@ -147,3 +147,4 @@ The other thread is harder to quantify but matters more: **Wednesday wasn't a re
 *Related reading: [The Real Cost of a Mediocre Trade](/posts/2026-09-14-elmt-ftft/) · [VEEA and the Squeeze I Was Too Afraid to Trade](/posts/2026-09-15-veea/) · [I Had DAIC on My Watchlist. I Still Missed It.](/posts/2026-09-17-kxin-aemd-daic/) · [Five Trades, One Ticker, and $350 I Watched Walk Away](/posts/2026-09-18-imcc/)*
 
 *Nothing in this post is financial advice — see the [Disclaimer](/disclaimer/) for the full statement.*
+

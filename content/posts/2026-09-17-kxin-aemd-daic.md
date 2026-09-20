@@ -57,7 +57,7 @@ A 602% revenue jump is an exciting headline sitting on top of a genuinely fragil
 {{< /callout >}}
 
 <figure>
-<img src="/images/kxin-30min-chart.png" alt="KXIN 30-minute chart showing the 9-EMA double tap that was the only bullish technical signal, against a backdrop of going-concern and dilution risk" style="width:100%;border-radius:8px;border:1px solid #E2E0D8;" loading="lazy">
+{{< img src="/images/kxin-30min-chart.png" alt="KXIN 30-minute chart showing the 9-EMA double tap that was the only bullish technical signal, against a backdrop of going-concern and dilution risk" >}}
 <figcaption>KXIN 30-min chart</figcaption>
 </figure>
 
@@ -88,7 +88,7 @@ A 602% revenue jump is an exciting headline sitting on top of a genuinely fragil
 {{< /callout >}}
 
 <figure>
-<img src="/images/aemd-1min-chart.png" alt="AEMD 1-minute chart showing the single-candle spike from $4.18 to $14, the pullback to the psychological $10 level, and the 50-EMA support the stock ran along from 8:06 to 9:05 AM" style="width:100%;border-radius:8px;border:1px solid #E2E0D8;" loading="lazy">
+{{< img src="/images/aemd-1min-chart.png" alt="AEMD 1-minute chart showing the single-candle spike from $4.18 to $14, the pullback to the psychological $10 level, and the 50-EMA support the stock ran along from 8:06 to 9:05 AM" >}}
 <figcaption>AEMD 1-min chart</figcaption>
 </figure>
 
@@ -132,7 +132,7 @@ It's also worth remembering the trade-off baked into this structure: existing sh
 {{< /callout >}}
 
 <figure>
-<img src="/images/daic-hourly-chart.png" alt="DAIC hourly chart showing the 9-EMA double tap at the $4 level after a four-hour consolidation, ahead of the Envoy Technologies acquisition news" style="width:100%;border-radius:8px;border:1px solid #E2E0D8;" loading="lazy">
+{{< img src="/images/daic-hourly-chart.png" alt="DAIC hourly chart showing the 9-EMA double tap at the $4 level after a four-hour consolidation, ahead of the Envoy Technologies acquisition news" >}}
 <figcaption>DAIC 1-hr chart</figcaption>
 </figure>
 
@@ -169,3 +169,4 @@ I don't fail at finding these setups — three real, catalyst-backed, heavily-sh
 *Related reading: [VEEA and the Squeeze I Was Too Afraid to Trade](/posts/2026-09-15-veea/) — the original split-adjustment mistake this post corrects · [The Real Cost of a Mediocre Trade](/posts/2026-09-14-elmt-ftft/) — on risk-budget depletion after an early loss · [Does VWAP Even Work on Low-Float Stocks?](/posts/2026-08-10-dki-jwel/) — the case for higher-timeframe confluence on thin floats.*
 
 *Nothing in this post is financial advice — see the [Disclaimer](/disclaimer/) for the full statement.*
+

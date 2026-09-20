@@ -1,5 +1,5 @@
 baseURL = "https://thetradingledger.netlify.app/"
-languageCode = "en-us"
+locale = "en-us"
 title = "The Trading Ledger"
 copyright = "© 2026 Anonymous. All rights reserved."
 
@@ -62,3 +62,35 @@ enableRobotsTXT = true
 [sitemap]
   changefreq = "weekly"
   priority = 0.5
+
+[[module.mounts]]
+source = "assets"
+target = "assets"
+
+[[module.mounts]]
+source = "static"
+target = "static"
+
+[[module.mounts]]
+source = "static"
+target = "assets"  # Allows static files to be processed by Hugo resources
+
+[[module.mounts]]
+source = "content"
+target = "content"
+
+[[module.mounts]]
+source = "layouts"
+target = "layouts"
+
+[imaging]
+  resampleFilter = "CatmullRom"
+  bgColor = "#ffffff"
+
+  [imaging.webp]
+    quality = 80
+
+  [imaging.jpeg]
+    quality = 80
+
+
