@@ -106,7 +106,7 @@ MEDS had been riding the **9-EMA on the hourly chart** for a while. It then form
 {{< /callout >}}
 
 <figure>
-{{{{< img src="/images/meds-15min-chart.png" alt="MEDS 15-minute chart showing the 3-hour-15-minute consolidation under the 100 DMA, the breakout at 9:45 AM, and the run from $4.50 to $12.26" >}}}}
+{{< img src="/images/meds-15min-chart.png" alt="MEDS 15-minute chart showing the 3-hour-15-minute consolidation under the 100 DMA, the breakout at 9:45 AM, and the run from $4.50 to $12.26" >}}
 <figcaption>MEDS 15-min Chart</figcaption>
 </figure>
 
