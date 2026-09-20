@@ -230,36 +230,8 @@ figure {
     margin-top: 0.4rem !important;
     padding: 0 !important;
     font-size: 0.85rem !important;
-    color: #666 !important;
+    color: #4a4a4a !important;
     text-align: center !important;
   }
 }
 
-/* Force centering on raw HTML <figure> and <figcaption> in Markdown posts */
-figure {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 1.5rem auto !important; /* Overrides default browser left margin */
-  padding: 0 !important;
-  width: 100% !important;
-  text-align: center !important;
-
-  img {
-    display: block !important;
-    max-width: 100% !important;
-    height: auto !important;
-    margin: 0 auto !important;
-  }
-
-  figcaption {
-    display: block !important;
-    width: 100% !important;
-    margin-top: 0.4rem !important;
-    padding: 0 !important;
-    font-size: 0.85rem !important;
-    color: #666 !important;
-    text-align: center !important;
-  }
-}
