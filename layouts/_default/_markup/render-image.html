@@ -7,7 +7,6 @@
 {{- $path = strings.TrimPrefix "/" $path -}}
 {{- $path = strings.TrimPrefix "static/" $path -}}
 
-{{ errorf "TEST: Hugo is loading render-image.html!" }}
 {{/* 1. Try finding image as a Page Resource (Page Bundles) */}}
 {{- $img := .Page.Resources.GetMatch $src -}}
 
