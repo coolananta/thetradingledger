@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thetradingledger.netlify.app/sitemap.xml
