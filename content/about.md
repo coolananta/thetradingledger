@@ -19,7 +19,7 @@ Nothing published here is investment, financial, or trading advice, and none of 
 
 Questions, corrections, or just want to talk shop about a specific setup? Reach out directly:
 
-**Email:** [ganon298@gmail.com](mailto:ganon298@gmail.com)
+**Email:** [desk@thetradingledger.net](mailto:desk@thetradingledger.net)
 
 Or use the form below — it goes to the same inbox.
 

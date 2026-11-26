@@ -1,4 +1,4 @@
-baseURL = "https://thetradingledger.netlify.app/"
+baseURL = "https://thetradingledger.net"
 locale = "en-us"
 title = "The Trading Ledger"
 copyright = "© 2026 Anonymous. All rights reserved."
@@ -7,7 +7,7 @@ copyright = "© 2026 Anonymous. All rights reserved."
 # Netlify Forms and giscus don't care either way, but this is the Hugo-idiomatic default.
 uglyURLs = false
 
-enableRobotsTXT = true
+enableRobotsTXT = false
 
 [sitemap]
   changefreq = 'weekly'
